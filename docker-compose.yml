@@ -1,0 +1,47 @@
+version : "3"
+services:
+  altron-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: altron-web
+    volumes:
+      - .:/var/www/html
+    restart: "no"
+    networks:
+      altron-network:
+        ipv4_address: 99.99.9.1
+
+  altron-pg:
+    image: postgres:15
+    container_name: altron-pg
+    volumes:
+      - altron-pg-disk:/var/lib/postgres
+    restart: "no"
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: testing
+    networks:
+      altron-network:
+        ipv4_address: 99.99.9.2
+
+  altron-mailpit:
+    image: 'axllent/mailpit:latest'
+    container_name: altron-mailpit
+    restart: "no"
+    networks:
+      altron-network:
+        ipv4_address: 99.99.9.3
+
+# On-disk storage of DB data, when containers are stopped
+volumes:
+  altron-pg-disk: {}
+
+# Local network for services running using this docker-compose config
+networks:
+  altron-network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 99.99.0.0/16
+
