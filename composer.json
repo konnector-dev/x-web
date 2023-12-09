@@ -48,7 +48,9 @@
             "@php artisan key:generate --ansi"
         ],
         "dev": [
-            "@post-root-package-install"
+            "@post-root-package-install",
+            "@php artisan key:generate --ansi",
+            "chmod -R 0777 storage bootstrap"
         ]
     },
     "extra": {
