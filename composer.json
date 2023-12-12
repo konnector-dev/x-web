@@ -55,7 +55,8 @@
         "dev": [
             "@post-root-package-install",
             "@php artisan key:generate --ansi",
-            "chmod -R 0777 storage bootstrap"
+            "chmod -R 0777 storage bootstrap",
+            "@php artisan migrate --seed"
         ],
         "cghooks": "[ -f vendor/bin/cghooks ] && vendor/bin/cghooks update || echo 'cghooks not found'",
         "security-checker": "vendor/bin/security-checker security:check",
