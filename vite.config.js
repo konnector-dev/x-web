@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite';
 import laravel, { refreshPaths } from 'laravel-vite-plugin';
 
+const host=  '99.99.9.4';
+
 export default defineConfig({
     plugins: [
         laravel({
@@ -11,7 +13,14 @@ export default defineConfig({
             refresh: [
                 ...refreshPaths,
                 'app/Livewire/**',
+                'resources/views/**',
             ],
         }),
     ],
+    server: {
+        host,
+        hmr: {
+            host: host
+        }
+    }
 });
