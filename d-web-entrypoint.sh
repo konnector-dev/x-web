@@ -6,8 +6,6 @@ composer run dev
 
 git config --global --add safe.directory /var/www/html
 git config core.filemode false
-
-#npm install
-#npm run build
+git config pull.rebase true
 
 apache2-foreground
