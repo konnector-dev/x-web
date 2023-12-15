@@ -1,8 +1,8 @@
 {
-    "name": "jdecode/altron",
+    "name": "jdecode/watcher",
     "type": "project",
     "description": "The AI experiments",
-    "keywords": ["jdecode", "altron", "AI", "experiments"],
+    "keywords": ["jdecode", "watcher", "AI", "experiments"],
     "license": "MIT",
     "require": {
         "php": "^8.2",
@@ -86,13 +86,13 @@
                 ]
             },
             "pre-commit": [
-                "docker-compose exec -T altron-web composer run pre-commit"
+                "docker-compose exec -T watcher-web composer run pre-commit"
             ],
             "pre-push": [
-                "docker-compose exec -T altron-web composer run pre-push"
+                "docker-compose exec -T watcher-web composer run pre-push"
             ],
             "post-merge": [
-                "docker-compose exec -T altron-web composer run post-merge"
+                "docker-compose exec -T watcher-web composer run post-merge"
             ]
         }
     },

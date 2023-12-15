@@ -1,59 +1,59 @@
 version : "3"
 services:
-  altron-web:
+  watcher-web:
     build:
       context: .
       dockerfile: d-web.Dockerfile
-    container_name: altron-web
+    container_name: watcher-web
     volumes:
       - .:/var/www/html
     restart: "no"
     networks:
-      altron-network:
-        ipv4_address: 99.99.9.1
+      watcher-network:
+        ipv4_address: 88.88.8.1
 
-  altron-pg:
+  watcher-pg:
     image: postgres:15
-    container_name: altron-pg
+    container_name: watcher-pg
     volumes:
-      - altron-pg-disk:/var/lib/postgres
+      - watcher-pg-disk:/var/lib/postgres
     restart: "no"
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: testing
     networks:
-      altron-network:
-        ipv4_address: 99.99.9.2
+      watcher-network:
+        ipv4_address: 88.88.8.2
 
-  altron-mailpit:
+  watcher-mailpit:
     image: 'axllent/mailpit:latest'
-    container_name: altron-mailpit
+    container_name: watcher-mailpit
     restart: "no"
     networks:
-      altron-network:
-        ipv4_address: 99.99.9.3
+      watcher-network:
+        ipv4_address: 88.88.8.3
 
-  altron-vite:
+  watcher-vite:
     build:
       context: .
       dockerfile: d-vite.Dockerfile
-    container_name: altron-vite
+    container_name: watcher-vite
     volumes:
       - .:/var/www/html
     restart: unless-stopped
     networks:
-      altron-network:
-        ipv4_address: 99.99.9.4
+      watcher-network:
+        ipv4_address: 88.88.8.4
 
 # On-disk storage of DB data, when containers are stopped
 volumes:
-  altron-pg-disk: {}
+  watcher-pg-disk: {}
 
 # Local network for services running using this docker-compose config
 networks:
-  altron-network:
+  watcher-network:
     ipam:
       driver: default
       config:
-        - subnet: 99.99.0.0/16
+        - subnet: 88.88.0.0/16
 
