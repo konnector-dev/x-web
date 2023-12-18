@@ -12,7 +12,8 @@
         "laravel/pennant": "^1.5",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
-        "livewire/livewire": "^3.0"
+        "livewire/livewire": "^3.0",
+        "spatie/laravel-permission": "^6.2"
     },
     "require-dev": {
         "brainmaestro/composer-git-hooks": "dev-master",
