@@ -7,6 +7,8 @@ services:
     container_name: watcher-web
     volumes:
       - .:/var/www/html
+    ports:
+      - "8888:80"
     restart: "no"
     networks:
       watcher-network:
