@@ -34,7 +34,7 @@ class GithubController extends Controller
         }
 
         Auth::login($user, true);
-        $user->createToken('github_oauth_token');
+        //$user->createToken('github_oauth_token');
         return redirect()->intended(route('dashboard'));
     }
 }
