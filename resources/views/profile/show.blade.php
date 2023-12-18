@@ -13,7 +13,7 @@
                 <x-section-border />
             @endif
 
-            @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
+            @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()) && auth()->user()->password != null)
                 <div class="mt-10 sm:mt-0">
                     @livewire('profile.update-password-form')
                 </div>

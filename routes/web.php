@@ -26,3 +26,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+require_once __DIR__ . '/GitHubOAuth.php';

@@ -44,5 +44,6 @@
                 </x-button>
             </div>
         </form>
+        <x-github-oauth />
     </x-authentication-card>
 </x-guest-layout>
