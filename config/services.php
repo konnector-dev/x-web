@@ -31,9 +31,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
     'github' => [
-        'client_id' => Config::get('env_vars.GITHUB_CLIENT_ID'),
-        'client_secret' => Config::get('env_vars.GITHUB_CLIENT_SECRET'),
-        'redirect' => Config::get('env_vars.GITHUB_CALLBACK'),
+        'client_id' => config('env_vars.GITHUB_CLIENT_ID'),
+        'client_secret' => config('env_vars.GITHUB_CLIENT_SECRET'),
+        'redirect' => config('env_vars.GITHUB_CALLBACK'),
     ],
 
 ];
