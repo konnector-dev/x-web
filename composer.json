@@ -17,6 +17,7 @@
         "spatie/laravel-permission": "^6.2"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.13",
         "brainmaestro/composer-git-hooks": "dev-master",
         "enlightn/enlightn": "^2.7",
         "enlightn/security-checker": "^1.11",
@@ -62,6 +63,11 @@
             "@php artisan migrate --seed"
         ],
         "cghooks": "[ -f vendor/bin/cghooks ] && vendor/bin/cghooks update || echo 'cghooks not found'",
+        "ide-helper": [
+            "@php artisan ide-helper:generate -n",
+            "@php artisan ide-helper:meta -n",
+            "@php artisan ide-helper:models -n"
+        ],
         "security-checker": "vendor/bin/security-checker security:check",
         "pint": "vendor/bin/pint app tests",
         "pre-commit": [
