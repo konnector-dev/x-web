@@ -19,6 +19,7 @@
             </button>
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a href="{{ url(route('register')) }}" class="text-sm font-semibold leading-6 text-white pr-4 ">Register</a>
             <a href="{{ url(route('login')) }}" class="text-sm font-semibold leading-6 text-white">Log in <span aria-hidden="true">&rarr;</span></a>
         </div>
     </nav>
@@ -42,8 +43,8 @@
             </div>
             <div class="mt-6 flow-root">
                 <div class="-my-6 divide-y divide-gray-500/25">
-
                     <div class="py-6">
+                        <a href="{{ url(route('register')) }}" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-800">Register</a>
                         <a href="{{ url(route('login')) }}" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-800">Log in</a>
                     </div>
                 </div>
