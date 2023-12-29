@@ -9,10 +9,20 @@
         <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @livewireScripts
     </head>
-    <body>
-        <div class="font-sans text-gray-900 dark:text-gray-100 antialiased">
+    <body
+        class="antialiased
+            container mx-auto px-4
+            h-dvh min-h-screen
+            bg-dots-darker bg-center
+            bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-blue-500 selection:text-white
+            flex flex-col justify-between
+            ">
+        <x-header />
+        <div>
             {{ $slot }}
         </div>
+    <x-footer />
     </body>
 </html>
