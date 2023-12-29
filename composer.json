@@ -23,6 +23,7 @@
         "enlightn/enlightn": "^2.7",
         "enlightn/security-checker": "^1.11",
         "fakerphp/faker": "^1.9.1",
+        "gehrisandro/tailwind-merge-laravel": "^1.0",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",
         "laravel/telescope": "^4.17",
