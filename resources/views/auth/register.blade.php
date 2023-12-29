@@ -1,9 +1,8 @@
 <x-guest-layout>
+    <div class="text-white text-3xl text-center">
+        Register
+    </div>
     <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
-
         <x-validation-errors class="mb-4" />
 
         <form method="POST" action="{{ route('register') }}">
@@ -56,5 +55,6 @@
                 </x-button>
             </div>
         </form>
+        <x-github-oauth />
     </x-authentication-card>
 </x-guest-layout>
