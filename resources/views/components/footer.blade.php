@@ -1,4 +1,4 @@
-<footer class="">
+<footer>
     <div class="mx-auto max-w-7xl px-6 py-12 lg:flex lg:items-center lg:justify-between lg:px-8">
         <div class="flex justify-center space-x-6 lg:order-2">
             <a target="_blank" href="https://twitter.com/jdecode" class="text-gray-400 hover:text-gray-500">
