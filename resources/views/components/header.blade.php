@@ -18,9 +18,11 @@
                 </svg>
             </button>
         </div>
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="{{ url(route('register')) }}" class="text-sm font-semibold leading-6 text-white pr-4 ">Register</a>
-            <a href="{{ url(route('login')) }}" class="text-sm font-semibold leading-6 text-white">Log in <span aria-hidden="true">&rarr;</span></a>
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center text-xl gap-6 text-white leading-6 font-semibold">
+            <a href="{{ url(route('register')) }}">Register</a>
+            <a
+                href="{{ url(route('login')) }}"
+                class="px-6 py-3 rounded-full bg-gray-500/50">Log in</a>
         </div>
     </nav>
     <!-- Mobile menu, show/hide based on menu open state. -->
