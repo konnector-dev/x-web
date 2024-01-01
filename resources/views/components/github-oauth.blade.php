@@ -1,13 +1,13 @@
-<div class="block mt-4">
-    <div class="mt-4">
+<div class="flex flex-col justify-center items-center">
+    <div class="w-full max-w-md">
         <a
-            class="w-2/3 mx-auto px-4 py-2 flex items-center justify-center rounded-xl border-2 border-black bg-black"
+            class="space-x-4 mx-auto py-2 flex items-center justify-center rounded-xl bg-black"
+            title="Login with GitHub"
             href="{{ url(route('github.login')) }}">
             <div>
                 <img
                     src="{{ asset('images/raw-github-white.svg') }}"
                     alt="GitHub OAuth Login"
-                    title="GitHub OAuth Login"
                     class="w-12 h-12"
                 />
             </div>
