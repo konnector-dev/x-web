@@ -2,12 +2,12 @@
     open: true,
     mobileOpen: false
 }">
-    <nav x-show="open" class="hidden lg:flex mx-auto max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <nav x-show="open" class="hidden lg:flex mx-auto max-w-7xl items-center justify-between h-16 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
-            <a href="{{ url(route('home')) }}" class="-m-1.5 p-1.5 flex items-center gap-x-2 text-xl">
+            <a href="{{ url(route('home')) }}" class="flex items-center gap-x-2 text-xl">
                 <span class="sr-only">{{ Config::get('env_vars.APP_NAME') }}</span>
                 <div><x-application-logo :class="'h-6 w-6'"/></div>
-                <span class="text-gray-300">{{ Config::get('env_vars.APP_NAME') }}</span>
+                <span class="pl-2 text-gray-300">{{ Config::get('env_vars.APP_NAME') }}</span>
             </a>
         </div>
         @auth
