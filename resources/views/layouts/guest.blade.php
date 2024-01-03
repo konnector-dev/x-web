@@ -17,7 +17,7 @@
             h-dvh min-h-screen
             bg-dots-darker bg-center
             text-white
-            bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-blue-500 selection:text-white
+            bg-gray-900
             flex flex-col justify-between
             ">
         <x-header />
