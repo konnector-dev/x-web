@@ -1,4 +1,4 @@
-<header class="bg-gray-900" x-data="{
+<header x-data="{
     open: true,
     mobileOpen: false
 }">
@@ -33,7 +33,7 @@
     <div class="lg:hidden" role="dialog" aria-modal="true" x-show="mobileOpen">
         <!-- Background backdrop, show/hide based on slide-over state. -->
         <div class="fixed inset-0 z-10"></div>
-        <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
+        <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
             <div class="flex items-center justify-between">
                 <a href="#" class="-m-1.5 p-1.5 flex items-center gap-x-2">
                     <span class="sr-only">{{ Config::get('env_vars.APP_NAME') }}</span>
