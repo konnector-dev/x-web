@@ -27,6 +27,7 @@ class ShowProjects extends Component
     public function render(): View
     {
         $this->projects = Project::where('user_id', Auth::id())
+            ->orderBy('name')
             ->get(['id', 'name', 'description']);
         return view('livewire.show-projects');
     }
