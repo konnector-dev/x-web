@@ -25,6 +25,9 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    require_once __DIR__ . '/project-routes.php';
+
 });
 
 require_once __DIR__ . '/GitHubOAuth.php';
