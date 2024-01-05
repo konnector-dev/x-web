@@ -1,3 +1,3 @@
 <x-full-width-layout>
-    <livewire:show-projects lazy />
+    <livewire:count-projects />
 </x-full-width-layout>
