@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
@@ -27,5 +28,14 @@ class AppServiceProvider extends ServiceProvider
             URL::forceScheme('https');
             $this->app['request']->server->set('HTTPS', 'on');
         }
+
+        Blade::directive('active', function ($route) {
+            return "<?php echo Route::currentRouteNamed($route)
+                    ?
+                    'class=\"bg-gray-800 text-white group flex gap-x-3 rounded-md p-3 text-sm leading-6\"'
+                    :
+                    'class=\"text-gray-400 hover:text-white hover:bg-gray-800 group flex gap-x-3 rounded-md p-3 text-sm leading-6\"'
+                    ; ?>";
+        });
     }
 }
