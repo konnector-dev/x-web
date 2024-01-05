@@ -1,5 +1,5 @@
 @if(app()->environment('local'))
-    <div class="fixed z-50 left-0 bottom-0 bg-blue-500 p-2 px-4 text-white text-xl font-bold" title="Screen size indicator">
+    <div class="border border-gray-500/20 p-0.5 px-2 text-white/60" title="Screen size indicator">
         <span class="sm:hidden">
             default &lt;640px
         </span>

@@ -1,7 +1,7 @@
 <div class="p-6 lg:p-8 border rounded-xl border-gray-300">
     <x-application-logo class="block h-12 w-auto" />
 
-    <h1 class="mt-8 text-2xl font-medium text-white">
+    <h1 class="mt-8 text-2xl font-medium">
         Welcome to Watcher!
     </h1>
 

@@ -11,7 +11,7 @@
             </a>
         </div>
         @auth
-            <a href="{{ url(route('dashboard')) }}" class="px-6 py-3 rounded-full font-semibold bg-blue-500/50 hover:bg-blue-600/50">Dashboard</a>
+            <a href="{{ url(route('dashboard')) }}" class="px-6 py-3 rounded-full font-semibold bg-blue-500/50 hover:bg-blue-600/50">Go to App</a>
         @else
             <div class="flex items-center text-xl gap-6 leading-6 font-semibold">
                 <a href="{{ url(route('register')) }}">Register</a>
