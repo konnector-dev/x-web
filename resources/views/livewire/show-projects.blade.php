@@ -5,10 +5,14 @@
     </div>
     <div class="mt-5">
         @forelse ($projects as $project)
-            <div wire:key="{{ $project->id }}" class="flex justify-between items-center p-5 border-0 border-dashed border-gray-500/40 rounded">
+            <div
+                wire:key="{{ $project->id }}"
+                class="flex justify-between items-center p-4 m-5
+                border border-gray-500/20 border-t-0 border-r-0 border-l-0
+                ">
                 <div>
                     <h2 class="text-xl font-semibold">{{ $project->name }}</h2>
-                    <p class="text-gray-500">{{ $project->description }}</p>
+                    <p class="text-gray-500 truncate">{{ $project->description }}</p>
                 </div>
                 <div>
                     <button class="p-2 px-4 rounded bg-gray-800/80" wire:click="edit({{ $project->id }})">Edit</button>
