@@ -1,9 +1,37 @@
 <div>
     <div class="flex justify-between items-center">
         <h1 class="text-2xl font-semibold">Projects</h1>
-        <button class="p-2 px-4 rounded bg-gray-800/80" wire:click="create">New project</button>
+        <button class="p-3 px-6 rounded-lg font-semibold text-lg bg-gray-800/80" wire:click="create">New project</button>
     </div>
-    <div class="mt-5">
+
+    <ul role="list" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 mt-6">
+        @forelse ($projects as $project)
+        <li
+            wire:key="{{ $project->id }}"
+            class="col-span-1 rounded-lg bg-gray-800 shadow flex flex-col justify-between pb-4">
+            <div class="flex w-full items-center justify-between space-x-6 p-6">
+                <div class="truncate">
+                    <div class="flex items-center space-x-3">
+                        <h3 class="font-medium">{{ $project->name }}</h3>
+                    </div>
+                    <p class="mt-1 truncate hover:text-clip text-sm text-gray-500">{{ $project->description }}</p>
+                </div>
+            </div>
+            <div class="flex items-center justify-between gap-2 space-x-2 space-y-2">
+                <div class="w-full mx-auto text-center">
+                    <button class="p-2 px-4 rounded border border-gray-500 bg-gray-800/80 hover:bg-gray-700" wire:click="edit({{ $project->id }})">Edit</button>
+                </div>
+                <div class="w-full mx-auto text-center">
+                    <button class="p-2 px-4 rounded border border-gray-500 bg-red-800/80 hover:bg-red-800" wire:confirm="Are you sure you want to delete this project?" wire:click="delete({{ $project->id }})">Delete</button>
+                </div>
+            </div>
+        </li>
+        @empty
+            <p>No projects</p>
+        @endforelse
+    </ul>
+
+    <div class="mt-5 hidden">
         @forelse ($projects as $project)
             <div
                 wire:key="{{ $project->id }}"
@@ -24,14 +52,14 @@
         @endforelse
     </div>
     <div class="mt-5">
-{{--        {{ $projects->links() }}--}}
+        {{-- {{ $projects->links() }} --}}
     </div>
     <x-dialog-modal wire:model="showModal">
         <x-slot name="title">
             {{ $editing ? 'Edit project' : 'Create project' }}
         </x-slot>
         <x-slot name="content">
-            <div class="flex flex-col space-y-4 w-96 mx-auto">
+            <div class="flex flex-col space-y-4 w-[80%] mx-auto">
                 <div>
                     <label for="name" class="block mb-2  font-medium text-gray-900 dark:text-white">Project name *</label>
                     <input type="text" wire:model="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Project X" />
@@ -41,7 +69,12 @@
                 </div>
                 <div>
                     <label for="description" class="block mb-2  font-medium text-gray-900 dark:text-white">Description</label>
-                    <input type="text" wire:model="description" id="description" class="bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="(Optional)" />
+                    <textarea
+                        wire:model="description"
+                        id="description"
+                        rows="5"
+                        class="bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="(Optional)"></textarea>
                     <div class="mt-2">
                         @error('description') <span class="text-red-500">{{ $message }}</span> @enderror
                     </div>
@@ -49,7 +82,7 @@
             </div>
         </x-slot>
         <x-slot name="footer">
-            <button class="rounded-lg px-5 py-2.5 text-center bg-blue-600" wire:click="{{ $editing ? 'update' : 'save' }}">Submit</button>
+            <button class="rounded-lg px-5 py-2.5 text-center bg-blue-600" wire:click="{{ $editing ? 'update' : 'save' }}">Save</button>
         </x-slot>
     </x-dialog-modal>
 </div>
