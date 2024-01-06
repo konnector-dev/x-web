@@ -9,7 +9,7 @@
         <li
             wire:key="{{ $project->id }}"
             class="group border border-gray-900 hover:border-gray-500 relative col-span-1 rounded-lg bg-gray-800 shadow flex flex-col justify-between pb-4">
-            <a class="flex w-full items-center justify-between space-x-6 p-6" href="{{ route('projects.view', $project->id) }}">
+            <a wire:navigate class="flex w-full items-center justify-between space-x-6 p-6" href="{{ route('projects.view', $project->id) }}">
                 <div class="truncate">
                     <div class="flex items-centergroup-hover:underline">
                         <div class="absolute top-0 right-0 p-4 text-3xl text-gray-500/30 group-hover:text-gray-200">
