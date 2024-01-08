@@ -1,6 +1,10 @@
 <div>
     <div class="flex justify-between items-center">
-        <h1 class="text-2xl font-semibold">{{ $project->name }}</h1>
+        <div class="flex">
+            <a href="{{ route('projects.index') }}" wire:navigate class="text-2xl font-semibold">Projects</a>
+            <span class="text-2xl font-semibold mx-4"> &gt; </span>
+            <h1 class="text-2xl font-semibold">{{ $project->name }}</h1>
+        </div>
         <button class="p-3 px-6 rounded-lg font-semibold text-lg bg-gray-800/80" wire:click="create">New URL</button>
     </div>
 
