@@ -17,7 +17,7 @@
                 <x-full-width.mobile-nav />
                 <x-full-width.desktop-nav />
             </div>
-            <div class="flex flex-col h-screen max-h-screen justify-between ml-20">
+            <div class="flex flex-col h-screen max-h-screen justify-between ml-24">
                 <x-full-width.header />
                 <div class="flex flex-col h-screen max-h-screen justify-between m-5 p-5 rounded">
                     <main>
