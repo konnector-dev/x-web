@@ -32,9 +32,9 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('active', function ($route) {
             return "<?php echo Route::currentRouteNamed($route)
                     ?
-                    'class=\"bg-gray-800 text-white group flex gap-x-3 rounded-md p-3 text-sm leading-6\"'
+                    ' bg-gray-800 text-white '
                     :
-                    'class=\"text-gray-400 hover:text-white hover:bg-gray-800 group flex gap-x-3 rounded-md p-3 text-sm leading-6\"'
+                    ' text-gray-400 hover:text-white hover:bg-gray-800 '
                     ; ?>";
         });
     }
