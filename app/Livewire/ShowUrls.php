@@ -24,6 +24,8 @@ class ShowUrls extends Component
     #[Validate('string')]
     public $url = '';
 
+    public string $message = '';
+
     #[Layout('layouts.full-width')]
     public function render(): View
     {
@@ -50,6 +52,8 @@ class ShowUrls extends Component
             ]
         );
         $this->showModal = false;
+        $this->message = 'URL created successfully.';
+        $this->dispatch('notify-url-saved');
     }
 
     public function edit(Url $Url): void
@@ -69,10 +73,14 @@ class ShowUrls extends Component
         $this->Url = new Url();
         $this->editing = false;
         $this->showModal = false;
+        $this->message = 'URL updated successfully.';
+        $this->dispatch('notify-url-saved');
     }
 
     public function delete(Url $Url): void
     {
         $Url->delete();
+        $this->message = 'URL deleted successfully.';
+        $this->dispatch('notify-url-saved');
     }
 }
