@@ -14,25 +14,45 @@
     <body class="font-sans antialiased w-full min-h-screen bg-gray-900 text-white">
         <div
             x-data="{
-                    openMobileNav: false,
-                    expandDesktopNav: true
-                }"
+                openMobileNav: false,
+                expandDesktopNav: true,
+                collapseDesktopNavbar() {
+                    this.expandDesktopNav = false;
+                    localStorage.setItem('expandDesktopNav', 'false');
+                },
+                expandDesktopNavbar() {
+                    this.expandDesktopNav = true;
+                    localStorage.expandDesktopNav = 'true';
+                },
+                initSidebar(expandDesktopNav = 'true') {
+                    if (localStorage.getItem('expandDesktopNav')) {
+                        if(localStorage.expandDesktopNav === 'true') {
+                            this.expandDesktopNavbar();
+                            return;
+                        }
+                        this.collapseDesktopNavbar()
+                        return;
+                    }
+                    this.expandDesktopNavbar();
+                    if(expandDesktopNav !== 'true') {
+                        this.collapseDesktopNavbar();
+                    }
+                }
+            }"
+            x-init="initSidebar()"
+            @keydown.shift.left.document="collapseDesktopNavbar()"
+            @keydown.shift.right.document="expandDesktopNavbar()"
             x-on:show-mobile-navbar.window="openMobileNav = true"
             x-on:hide-mobile-navbar.window="openMobileNav = false"
-            x-on:expand-desktop-navbar.window="expandDesktopNav = true"
-            x-on:collapse-desktop-navbar.window="expandDesktopNav = false"
-            class="">
-            <div
-                class="">
+            x-on:expand-desktop-navbar.window="expandDesktopNavbar()"
+            x-on:collapse-desktop-navbar.window="collapseDesktopNavbar()">
+            <div>
                 <x-full-width.mobile-nav />
                 <x-full-width.desktop-nav />
             </div>
             <div
-                class="flex flex-col justify-between
-                    h-screen max-h-screen
-                    "
-                :class="expandDesktopNav ? 'lg:ml-64' : 'lg:ml-20'"
-                >
+                class="flex flex-col justify-between h-screen max-h-screen"
+                :class="expandDesktopNav ? 'lg:ml-64' : 'lg:ml-20'">
                 <x-full-width.header />
                 <div class="flex flex-col h-screen max-h-screen justify-between m-5 p-5 rounded">
                     <main>
