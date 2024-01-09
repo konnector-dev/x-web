@@ -1,5 +1,4 @@
 <div
-    x-data
     @click="$dispatch('show-mobile-navbar')"
     class="absolute z-50 left-0 top-0 w-16 lg:hidden">
     <button type="button" class="m-2.5 p-2.5">
@@ -9,11 +8,8 @@
 </div>
 
 <div
-    x-data="{ open: false }"
     x-cloak
-    x-show="open"
-    x-on:show-mobile-navbar.window="open = true"
-    x-on:hide-mobile-navbar.window="open = false"
+    x-show="openMobileNav"
     class="relative z-50 lg:hidden"
     role="dialog"
     aria-modal="true">
