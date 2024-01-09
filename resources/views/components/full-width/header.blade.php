@@ -9,7 +9,7 @@
     @click.away="profileDropdownOpen = false"
     @close.stop="profileDropdownOpen = false"
     >
-    <button type="button" class="-m-2.5 p-2.5 lg:hidden">
+    <button type="button" class="-m-2.5 p-2.5 hidden">
         <span class="sr-only">Open sidebar</span>
         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -48,7 +48,8 @@
                     aria-expanded="false"
                     aria-haspopup="true">
                     <span class="sr-only">Open user menu</span>
-                    <img title="{{ Auth::user()->name }}" class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                    <span title="{{ Auth::user()->name }}" class="h-8 w-8 rounded-full object-cover hidden" data-src="" alt="{{ Auth::user()->name }}"></span>
+                    <img title="{{ Auth::user()->name }}" class="h-8 w-8 rounded-full object-cover" src="{{ Avatar::create(Auth::user()->name)->toBase64() }}" alt="{{ Auth::user()->name }}" />
                     <span class="hidden lg:flex lg:items-center">
                         <span class="ml-4 font-semibold leading-6 hidden" aria-hidden="true">{{ Auth::user()->name }}</span>
                         <svg class="ml-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
