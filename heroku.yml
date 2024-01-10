@@ -1,0 +1,9 @@
+build:
+  docker:
+    web: Heroku.Web.Dockerfile
+    worker: Heroku.Worker.Dockerfile
+
+release:
+  image: web
+  command:
+    - 'php artisan migrate --seed --force'
