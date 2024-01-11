@@ -11,11 +11,14 @@
             class="group border border-gray-900 hover:border-gray-500 relative col-span-1 rounded-lg bg-gray-800 shadow flex flex-col justify-between pb-4">
             <a wire:navigate class="flex w-full items-center justify-between space-x-6 p-6" href="{{ route('projects.view', $project->id) }}">
                 <div class="truncate">
-                    <div class="flex items-centergroup-hover:underline">
+                    <div class="flex flex-col items-start group-hover:underline">
                         <div class="absolute top-0 right-0 p-4 text-3xl text-gray-500/30 group-hover:text-gray-200">
                             #{{ $project->id }}
                         </div>
                         <h3 class="font-medium text-lg">{{ $project->name }}</h3>
+                        <div>
+                            {{ $project->urls_count ? "No. of URLs : $project->urls_count" : ''  }}
+                        </div>
                     </div>
                     <p class="mt-1 truncate hover:text-clip text-sm text-gray-500">{{ $project->description }}</p>
                 </div>
