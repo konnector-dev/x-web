@@ -1,5 +1,5 @@
 <div
-    class="sticky top-0 z-40
+    class="sticky top-0 z-10
     px-4 h-16 shrink-0 gap-x-4
     flex items-center
     border-b border-gray-500/20
