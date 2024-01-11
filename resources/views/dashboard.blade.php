@@ -1,3 +1,3 @@
 <x-full-width-layout>
-    <livewire:count-projects lazy />
+    Insights would go here
 </x-full-width-layout>

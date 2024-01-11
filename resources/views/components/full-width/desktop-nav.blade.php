@@ -1,7 +1,7 @@
 <!-- Static sidebar for desktop -->
 <div
     x-data
-    class="hidden lg:fixed lg:inset-y-0 lg:left-0 lg:z-50 lg:block
+    class="hidden lg:fixed lg:inset-y-0 lg:left-0 lg:z-10 lg:block
         lg:overflow-y-auto lg:bg-gray-900 lg:pb-4
         border border-gray-500/20
         border-l-0 border-t-0 border-b-0

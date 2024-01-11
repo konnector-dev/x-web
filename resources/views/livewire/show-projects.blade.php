@@ -1,6 +1,6 @@
 <div>
     <div class="flex justify-between items-center">
-        <h1 class="text-2xl font-semibold">Projects</h1>
+        <h1 class="text-2xl font-semibold"><livewire:count-projects /></h1>
         <button class="p-3 px-6 rounded-lg font-semibold text-lg bg-gray-800/80" wire:click="create">New project</button>
     </div>
 

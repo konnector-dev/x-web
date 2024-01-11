@@ -1,6 +1,6 @@
 <div
     @click="$dispatch('show-mobile-navbar')"
-    class="absolute z-50 left-0 top-0 w-16 lg:hidden">
+    class="absolute z-10 left-0 top-0 w-16 lg:hidden">
     <button type="button" class="m-2.5 p-2.5">
         <span class="sr-only">Open sidebar</span>
         <span class="material-symbols-outlined">menu</span>
@@ -10,7 +10,7 @@
 <div
     x-cloak
     x-show="openMobileNav"
-    class="relative z-50 lg:hidden"
+    class="relative z-10 lg:hidden"
     role="dialog"
     aria-modal="true">
 
