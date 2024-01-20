@@ -26,8 +26,19 @@ class Url extends Model
         'notifications_sent',
         'notification_type',
         'notification_type_id',
-        'monitoring_frequency_minutes'
+        'monitoring_frequency_minutes',
+        'http_status_code',
     ];
+
+    public const STATUS_ACTIVE = 'active';
+    public const STATUS_INACTIVE = 'inactive';
+
+    public const STATE_UP = 'up';
+    public const STATE_DOWN = 'down';
+    public const STATE_PENDING = 'pending';
+    public const STATE_TIMEOUT = 'timeout';
+    public const STATE_ERROR = 'error';
+
 
     public function user(): BelongsTo
     {
