@@ -8,7 +8,7 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        if (app()->isLocal() || app()->runningUnitTests()) {
+        if (app()->runningUnitTests()) {
             $this->call([
                 UserSeeder::class,
                 ProjectSeeder::class,
