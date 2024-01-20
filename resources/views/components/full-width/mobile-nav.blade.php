@@ -1,7 +1,9 @@
 <div
     @click="$dispatch('show-mobile-navbar')"
-    class="absolute z-10 left-0 top-0 w-16 lg:hidden">
-    <button type="button" class="m-2.5 p-2.5">
+    @click.outside="$dispatch('hide-mobile-navbar')"
+    @keydown.escape.window="$dispatch('hide-mobile-navbar')"
+    class="absolute z-20 left-0 top-0 w-16">
+    <button type="button" class="m-2.5 p-2.5 lg:hidden">
         <span class="sr-only">Open sidebar</span>
         <span class="material-symbols-outlined">menu</span>
     </button>
@@ -10,7 +12,7 @@
 <div
     x-cloak
     x-show="openMobileNav"
-    class="relative z-10 lg:hidden"
+    class="relative z-20 lg:hidden"
     role="dialog"
     aria-modal="true">
 
