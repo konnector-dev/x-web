@@ -53,7 +53,7 @@ class ShowUrls extends Component
         );
         $this->showModal = false;
         $this->message = 'URL created successfully.';
-        $this->dispatch('notify-url-saved');
+        $this->dispatch('action-successful');
     }
 
     public function edit(Url $Url): void
@@ -74,13 +74,13 @@ class ShowUrls extends Component
         $this->editing = false;
         $this->showModal = false;
         $this->message = 'URL updated successfully.';
-        $this->dispatch('notify-url-saved');
+        $this->dispatch('action-successful');
     }
 
     public function delete(Url $Url): void
     {
         $Url->delete();
         $this->message = 'URL deleted successfully.';
-        $this->dispatch('notify-url-saved');
+        $this->dispatch('action-successful');
     }
 }

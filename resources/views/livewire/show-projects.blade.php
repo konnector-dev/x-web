@@ -71,4 +71,5 @@
             <button class="rounded-lg px-5 py-2.5 text-center bg-blue-600" wire:click="{{ $editing ? 'update' : 'save' }}">Save</button>
         </x-slot>
     </x-dialog-modal>
+    <x-notification />
 </div>

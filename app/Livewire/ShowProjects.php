@@ -23,6 +23,8 @@ class ShowProjects extends Component
 
     public Project $project;
 
+    public string $message = '';
+
     #[Layout('layouts.full-width')]
     public function render(): View
     {
@@ -47,6 +49,8 @@ class ShowProjects extends Component
 
         Auth::user()->projects()->create($this->only('name', 'description'));
         $this->showModal = false;
+        $this->message = 'Project created successfully.';
+        $this->dispatch('action-successful');
     }
 
     public function edit(Project $project): void
@@ -66,10 +70,14 @@ class ShowProjects extends Component
         $this->project = new Project();
         $this->editing = false;
         $this->showModal = false;
+        $this->message = 'Project updated successfully.';
+        $this->dispatch('action-successful');
     }
 
     public function delete(Project $project): void
     {
         $project->delete();
+        $this->message = 'Project deleted successfully.';
+        $this->dispatch('action-successful');
     }
 }
