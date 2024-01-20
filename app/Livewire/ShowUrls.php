@@ -29,7 +29,17 @@ class ShowUrls extends Component
     #[Layout('layouts.full-width')]
     public function render(): View
     {
-        $this->urls = $this->project->urls()->orderBy('name')->get(['id', 'name', 'url']);
+        $this->urls = $this->project->urls()
+            ->orderBy('name')
+            ->get(
+                [
+                    'id',
+                    'name',
+                    'url',
+                    'http_status_code',
+                    'last_checked_at',
+                ]
+            );
         return view('livewire.show-urls');
     }
 

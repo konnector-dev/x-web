@@ -1,3 +1,6 @@
+<?php
+use Symfony\Component\HttpFoundation\Response;
+?>
 <div>
     <div class="flex justify-between items-center">
         <div class="flex">
@@ -13,7 +16,24 @@
             @forelse ($urls as $url)
                 <li
                     wire:key="{{ $url->id }}"
-                    class="group border border-gray-900 hover:border-gray-500 relative col-span-1 rounded-lg bg-gray-800 shadow flex flex-col justify-between pb-4">
+                    class="group
+                        border
+                        {{
+                            is_null($url->last_checked_at)
+                            ?
+                            ' border-gray-900 hover:border-gray-500 '
+                            :
+                            (
+                                $url->http_status_code === Response::HTTP_OK
+                                ?
+                                ' border-green-500 hover:border-green-500 '
+                                :
+                                ' border-red-500 hover:border-red-500 '
+                            )
+                        }}
+                        relative col-span-1 rounded-lg
+                        bg-gray-800
+                        shadow flex flex-col justify-between pb-4">
                     <div class="flex w-full items-center justify-between space-x-6 p-6" >
                         <div class="truncate">
                             <div class="flex items-centergroup-hover:underline">
