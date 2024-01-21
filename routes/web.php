@@ -26,6 +26,11 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
+    Route::get('/check-urls', function () {
+        Artisan::call('check:urls');
+        return redirect()->route('dashboard');
+    })->name('check-urls');
+
     require_once __DIR__ . '/project-routes.php';
 
 });
