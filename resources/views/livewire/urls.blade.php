@@ -2,12 +2,22 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
         @forelse($urls as $url)
         <div wire:key="{{ $url->id }}" class="flex items-center gap-4 p-4 border border-gray-500/50 rounded-lg relative">
-            <div class="flex flex-col">
+            <div class="flex flex-col text-gray-400 group truncate ">
                 <span class="text-sm">#{{ $url->project->name }}</span>
-                <span class="font-semibold text-lg">{{ $url->name }}</span>
-                <a href="#" class="text-sm text-gray-400" rel="ugc">
+                <span class="font-semibold text-lg text-gray-300">{{ $url->name }}</span>
+                <a
+                    href="{{ $url->url }}"
+                    target="_blank"
+                    title="{{ $url->url }}"
+                    class="text-sm truncate hover:text-clip">
                     {{ $url->url }}
                 </a>
+                <span class="mt-2 text-sm text-gray-300">
+                Last checked {{
+                    Carbon\Carbon::createFromDate($url->last_checked_at)
+                    ->diffForHumans()
+                }}
+                </span>
             </div>
             @php
                 $color = $url->http_status_code === \Symfony\Component\HttpFoundation\Response::HTTP_OK
