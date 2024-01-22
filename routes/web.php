@@ -31,6 +31,11 @@ Route::middleware([
         return redirect()->route('dashboard');
     })->name('check-urls');
 
+    Route::get('/slack/interactive-endpoint', function () {
+        $response = ['response' => 'Hello, world!'];
+        return view('slack.interactive-endpoint', $response);
+    })->name('slack.interactive-endpoint');
+
     require_once __DIR__ . '/project-routes.php';
 
 });
