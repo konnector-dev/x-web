@@ -6,11 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Notification;
 
 class Url extends Model
 {
     use HasFactory;
     use softDeletes;
+    use Notifiable;
 
     protected $fillable = [
         'user_id',
@@ -49,4 +52,10 @@ class Url extends Model
     {
         return $this->belongsTo(Project::class);
     }
+
+    public function routeNotificationForSlack(Notification $notification): mixed
+    {
+        return config('env_vars.SLACK_BOT_USER_DEFAULT_CHANNEL');
+    }
+
 }
