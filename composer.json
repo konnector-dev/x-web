@@ -13,6 +13,7 @@
         "laravel/pennant": "^1.5",
         "laravel/pulse": "^1.0@beta",
         "laravel/sanctum": "^3.3",
+        "laravel/slack-notification-channel": "^3.2",
         "laravel/socialite": "^5.11",
         "laravel/tinker": "^2.8",
         "laravolt/avatar": "^5.0",
