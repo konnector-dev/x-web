@@ -8,6 +8,7 @@
         "php": "^8.2",
         "gehrisandro/tailwind-merge-laravel": "^1.0",
         "guzzlehttp/guzzle": "^7.2",
+        "laravel-notification-channels/telegram": "^4.0",
         "laravel/framework": "^10.10",
         "laravel/jetstream": "^4.1",
         "laravel/pennant": "^1.5",
