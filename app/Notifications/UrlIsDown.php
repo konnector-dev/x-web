@@ -11,6 +11,7 @@ use Illuminate\Notifications\Slack\BlockKit\Blocks\ContextBlock;
 use Illuminate\Notifications\Slack\BlockKit\Blocks\SectionBlock;
 use Illuminate\Notifications\Slack\SlackMessage;
 use Illuminate\Support\Facades\Log;
+use NotificationChannels\Telegram\TelegramMessage;
 
 class UrlIsDown extends Notification implements ShouldQueue
 {
@@ -28,7 +29,7 @@ class UrlIsDown extends Notification implements ShouldQueue
      */
     public function via(object $notifiable): array
     {
-        return ['slack'];
+        return ['slack', 'telegram'];
     }
 
     /**
@@ -68,5 +69,20 @@ class UrlIsDown extends Notification implements ShouldQueue
             ->contextBlock(function (ContextBlock $block) {
                 $block->text('By: ' . config('env_vars.APP_NAME') . ', Env: ' . config('env_vars.APP_ENV'));
             });
+    }
+
+    /**
+     * Get the Telegram representation of the notification.
+     */
+    public function toTelegram(object $notifiable): TelegramMessage
+    {
+        return TelegramMessage::create()
+            ->to(config('env_vars.TELEGRAM_NOTIFICATIONS_DEFAULT_CHAT_ID'))
+            ->content(
+                "{$this->url->name} is down ❌\n[{$this->url->url}]({$this->url->url})\nBy: "
+                . config('env_vars.APP_NAME')
+                . ", Env: "
+                . config('env_vars.APP_ENV')
+            );
     }
 }

@@ -38,17 +38,18 @@ class CheckUrls extends Command
                 $url->http_status_code = Response::HTTP_INTERNAL_SERVER_ERROR;
                 $url->state = Url::STATE_ERROR;
                 Log::error("$url->http_status_code: $url->url");
-                $this->notifySlack($url);
+                $this->sendNotification($url);
             }
             $url->last_checked_at = now()->format('Y-m-d H:i:s');
             $url->save();
         }
     }
 
-    private function notifySlack(Url $url): void
+    private function sendNotification(Url $url): void
     {
-        $this->info('Sending Slack notification...');
+        $this->info('Sending Slack and Telegram notifications...');
         Notification::route('slack', config('env_vars.SLACK_BOT_USER_DEFAULT_CHANNEL'))
+            ->route('telegram', config('env_vars.TELEGRAM_NOTIFICATIONS_DEFAULT_CHAT_ID'))
             ->notify(new UrlIsDown($url));
     }
 }
