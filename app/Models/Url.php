@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Notifications\Slack\SlackRoute;
 use Illuminate\Support\Facades\Notification;
+use NotificationChannels\Telegram\TelegramChannel;
 
 class Url extends Model
 {
@@ -58,4 +60,8 @@ class Url extends Model
         return config('env_vars.SLACK_BOT_USER_DEFAULT_CHANNEL');
     }
 
+    public function routeNotificationForTelegram(Notification $notification): mixed
+    {
+        return config('env_vars.TELEGRAM_NOTIFICATIONS_DEFAULT_CHAT_ID');
+    }
 }

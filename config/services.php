@@ -41,5 +41,10 @@ return [
             'channel' => config('env_vars.SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
+    'telegram-bot-api' => [
+        'token' => config('env_vars.TELEGRAM_BOT_TOKEN'),
+        'channel' => config('env_vars.TELEGRAM_NOTIFICATIONS_DEFAULT_CHANNEL'),
+        'chat_id' => config('env_vars.TELEGRAM_NOTIFICATIONS_DEFAULT_CHAT_ID'),
+    ],
 
 ];
