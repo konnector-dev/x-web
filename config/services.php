@@ -35,5 +35,11 @@ return [
         'client_secret' => config('env_vars.GITHUB_CLIENT_SECRET'),
         'redirect' => config('env_vars.GITHUB_CALLBACK'),
     ],
+    'slack' => [
+        'notifications' => [
+            'bot_user_oauth_token' => config('env_vars.SLACK_BOT_USER_OAUTH_TOKEN'),
+            'channel' => config('env_vars.SLACK_BOT_USER_DEFAULT_CHANNEL'),
+        ],
+    ],
 
 ];
