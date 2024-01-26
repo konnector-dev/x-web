@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Spatie\Browsershot\Browsershot;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,16 @@ Route::middleware([
         $response = ['response' => 'Hello, world!'];
         return view('slack.interactive-endpoint', $response);
     })->name('slack.interactive-endpoint');
+
+    Route::get('/p', function () {
+        Browsershot::url('https://watcher.konnector.dev')
+            ->setRemoteInstance('88.88.8.5')
+            ->authenticate('admin', 'admin')
+            ->waitUntilNetworkIdle()
+            ->showBackground()
+            ->save(now()->format('Y-m-d-H-i-s') . '.pdf');
+        return  view('welcome');
+    });
 
     require_once __DIR__ . '/project-routes.php';
 
