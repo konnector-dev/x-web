@@ -11,8 +11,6 @@ class DatabaseSeeder extends Seeder
         if (app()->runningUnitTests()) {
             $this->call([
                 UserSeeder::class,
-                ProjectSeeder::class,
-                UrlSeeder::class,
             ]);
         }
     }

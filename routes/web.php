@@ -27,28 +27,6 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/check-urls', function () {
-        Artisan::call('check:urls');
-        return redirect()->route('dashboard');
-    })->name('check-urls');
-
-    Route::get('/slack/interactive-endpoint', function () {
-        $response = ['response' => 'Hello, world!'];
-        return view('slack.interactive-endpoint', $response);
-    })->name('slack.interactive-endpoint');
-
-    Route::get('/p', function () {
-        Browsershot::url('https://watcher.konnector.dev')
-            ->setRemoteInstance('88.88.8.5')
-            ->authenticate('admin', 'admin')
-            ->waitUntilNetworkIdle()
-            ->showBackground()
-            ->save(now()->format('Y-m-d-H-i-s') . '.pdf');
-        return  view('welcome');
-    });
-
-    require_once __DIR__ . '/project-routes.php';
-
 });
 
 require_once __DIR__ . '/GitHubOAuth.php';

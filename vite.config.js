@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import laravel, { refreshPaths } from 'laravel-vite-plugin';
 
-const host=  '88.88.8.4';
+const host=  '12.35.1.4';
 
 export default defineConfig({
     plugins: [

@@ -2,11 +2,11 @@
     <x-application-logo class="block h-12 w-auto" />
 
     <h1 class="mt-8 text-2xl font-medium">
-        Welcome to Watcher!
+        Welcome to x-web!
     </h1>
 
     <p class="mt-6 text-gray-400 leading-relaxed">
-        Watcher watches your websites and APIs for downtime and notifies you, so that you can sleep peacefully.
+        Build your next Laravel app with x-web. A starter kit for building modern, responsive, and accessible web applications.
     </p>
 </div>
 

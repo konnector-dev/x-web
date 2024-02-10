@@ -5,7 +5,7 @@
                 <span class="sr-only">Twitter</span>
                 <img src="{{ asset('images/twitter-white.svg') }}" alt="Twitter" class="h-8 w-8" />
             </a>
-            <a target="_blank" href="https:///github.com/jdecode/watcher">
+            <a target="_blank" href="https:///github.com/jdecode/x-web">
                 <span class="sr-only">GitHub</span>
                 <img src="{{ asset('images/raw-github-white.svg') }}" alt="GitHub" class="h-8 w-8" />
             </a>

@@ -1,5 +1,5 @@
 <img
     {{ $attributes }}
-    src="{{ asset('watcher.svg') }}"
+    src="{{ asset('x-web.svg') }}"
     alt="{{ config('env_vars.APP_NAME') }}"
     title="{{ config('env_vars.APP_NAME') }}" />

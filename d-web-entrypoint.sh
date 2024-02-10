@@ -1,7 +1,6 @@
 #!/bin/bash
 
 composer install
-
 composer run dev
 
 git config --global --add safe.directory /var/www/html

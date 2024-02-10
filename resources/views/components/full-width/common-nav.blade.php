@@ -6,11 +6,6 @@
                 'label' => 'Dashboard',
                 'icon' => 'home',
             ],
-            [
-                'route' => 'projects.index',
-                'label' => 'Projects',
-                'icon' => 'list',
-            ]
         ],
     ]
 )
