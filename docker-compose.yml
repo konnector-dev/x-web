@@ -13,7 +13,6 @@ services:
     environment:
         XDEBUG_CONFIG: "serverName=x-web"
         XDEBUG_SESSION: "on"
-        XDEBUG_SESSION_START: "on"
     networks:
       x-network:
         ipv4_address: 12.35.1.1
