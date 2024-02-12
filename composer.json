@@ -1,8 +1,8 @@
 {
     "name": "jdecode/watcher",
-    "type": "project",
-    "description": "The AI experiments",
-    "keywords": ["jdecode", "watcher", "AI", "experiments"],
+    "type": "template",
+    "description": "Web Boilerplate Experiment",
+    "keywords": ["jdecode", "web", "boilerplate", "experiment"],
     "license": "MIT",
     "require": {
         "php": "^8.3",
@@ -16,6 +16,7 @@
         "laravel/sanctum": "^3.3",
         "laravel/slack-notification-channel": "^3.2",
         "laravel/socialite": "^5.11",
+        "laravel/telescope": "^4.17",
         "laravel/tinker": "^2.8",
         "laravolt/avatar": "^5.0",
         "livewire/livewire": "^3.0",
@@ -33,7 +34,6 @@
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",
-        "laravel/telescope": "^4.17",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^7.0",
         "phpunit/phpunit": "^10.1",
@@ -94,9 +94,7 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": [
-                "laravel/telescope"
-            ]
+            "dont-discover": []
         },
         "hooks": {
             "config": {
