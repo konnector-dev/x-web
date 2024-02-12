@@ -5,7 +5,7 @@
     "keywords": ["jdecode", "watcher", "AI", "experiments"],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
+        "php": "^8.3",
         "gehrisandro/tailwind-merge-laravel": "^1.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel-notification-channels/telegram": "^4.0",
@@ -25,6 +25,7 @@
         "spatie/laravel-permission": "^6.2"
     },
     "require-dev": {
+        "ext-xdebug": "*",
         "barryvdh/laravel-ide-helper": "^2.13",
         "brainmaestro/composer-git-hooks": "dev-master",
         "enlightn/enlightn": "^2.7",

@@ -10,9 +10,15 @@ services:
     ports:
       - "1235:80"
     restart: "no"
+    environment:
+        XDEBUG_CONFIG: "serverName=x-web"
+        XDEBUG_SESSION: "on"
+        XDEBUG_SESSION_START: "on"
     networks:
       x-network:
         ipv4_address: 12.35.1.1
+    extra_hosts:
+      - host.docker.internal:host-gateway
 
   x-pg:
     image: postgres:15
