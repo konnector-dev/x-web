@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
@@ -13,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        if ($this->app->environment('local')) {
+        if ($this->app->environment('local') || Config::get('env_vars.TELESCOPE_ENABLED')) {
             $this->app->register(\Laravel\Telescope\TelescopeServiceProvider::class);
             $this->app->register(TelescopeServiceProvider::class);
         }
