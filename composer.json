@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.3",
+        "ext-gd": "*",
         "gehrisandro/tailwind-merge-laravel": "^1.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel-notification-channels/telegram": "^4.0",
