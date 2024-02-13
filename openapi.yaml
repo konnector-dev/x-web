@@ -71,5 +71,19 @@ components:
     bearerAuth:
       type: http
       scheme: bearer
+  x-scripts:
+    HelloLogger:
+      description: console.log("hello")
+      type: function
+  x-tests:
+    StatusOkTest:
+      description: pm.test('Status code is 200', function () { pm.response.to.have.status(200); });
+      type: function
+  x-functions:
+    Incrementer:
+      description: (y)=>y+1
+      type: function
 security:
   - bearerAuth: []
+servers:
+  - url: http://12.35.1.1
