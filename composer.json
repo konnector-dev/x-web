@@ -71,9 +71,14 @@
         ],
         "dev": [
             "@post-root-package-install",
-            "@php artisan key:generate --ansi",
+            "@post-create-project-cmd",
             "chmod -R 0777 storage bootstrap",
-            "@php artisan migrate --seed"
+            "@php artisan migrate --seed",
+            "@ide-helper",
+            "@cghooks",
+            "@security-checker",
+            "@enlightn",
+            "@pint"
         ],
         "cghooks": "[ -f vendor/bin/cghooks ] && vendor/bin/cghooks update || echo 'cghooks not found'",
         "ide-helper": [
@@ -82,18 +87,18 @@
             "@php artisan ide-helper:models -n"
         ],
         "security-checker": "vendor/bin/security-checker security:check",
+        "enlightn": "@php artisan enlightn",
         "pint": "vendor/bin/pint app tests",
         "pre-commit": [
             "@pint",
             "@security-checker"
         ],
         "pre-push": [
-            "@php artisan enlightn"
+            "@enlightn"
         ],
         "post-merge": [
             "composer install",
-            "@php artisan migrate",
-            "@php artisan db:seed"
+            "@php artisan migrate --seed"
         ]
     },
     "extra": {
