@@ -1,12 +1,13 @@
 {
-    "name": "laravel/laravel",
-    "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "name": "konnector-dev/x-web",
+    "type": "boilerplate",
+    "description": "Boilerplate for quick prototyping of web based SaaS applications built using Laravel ecosystem",
+    "keywords": ["x-web", "boilerplate"],
     "license": "MIT",
     "require": {
         "php": "^8.3",
         "laravel/framework": "^11.0",
+        "laravel/jetstream": "^5.0",
         "laravel/tinker": "^2.9"
     },
     "require-dev": {
