@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 
+const host=  '12.35.1.4';
+
 export default defineConfig({
     plugins: [
         laravel({
@@ -11,4 +13,10 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    server: {
+        host,
+        hmr: {
+            host: host
+        }
+    }
 });
