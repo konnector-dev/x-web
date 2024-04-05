@@ -1,0 +1,66 @@
+version : "3"
+services:
+  x-web:
+    build:
+      context: .
+      dockerfile: d-web.Dockerfile
+    container_name: x-web
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "1235:80"
+    restart: "no"
+    environment:
+        XDEBUG_CONFIG: "serverName=x-web"
+        XDEBUG_SESSION: "on"
+    networks:
+      x-network:
+        ipv4_address: 12.35.1.1
+    extra_hosts:
+      - host.docker.internal:host-gateway
+
+  x-pg:
+    image: postgres:15
+    container_name: x-pg
+    volumes:
+      - x-pg-disk:/var/lib/postgres
+    restart: "no"
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: testing
+    networks:
+      x-network:
+        ipv4_address: 12.35.1.2
+
+  x-mailpit:
+    image: 'axllent/mailpit:latest'
+    container_name: x-mailpit
+    restart: "no"
+    networks:
+      x-network:
+        ipv4_address: 12.35.1.3
+
+  x-vite:
+    build:
+      context: .
+      dockerfile: d-vite.Dockerfile
+    container_name: x-vite
+    volumes:
+      - .:/var/www/html
+    restart: unless-stopped
+    networks:
+      x-network:
+        ipv4_address: 12.35.1.4
+
+# On-disk storage of DB data, when containers are stopped
+volumes:
+  x-pg-disk: {}
+
+# Local network for services running using this docker-compose config
+networks:
+  x-network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 12.35.0.0/16
+
