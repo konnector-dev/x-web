@@ -1,3 +1,0 @@
-<div>
-    <x-footer />
-</div>
