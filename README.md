@@ -13,7 +13,7 @@ Boilerplate for quick prototyping of web based SaaS applications built using Lar
         - [x] Pennant
         - [ ] Composer Git Hooks (cghooks)
         - [x] IDE Helper
-        - [ ] Livewire
+        - [x] Livewire
         - [ ] Security Checker (Enlightn)
         - [ ] Enlightn
     - [x] Postgres: 11.24.1.2:5432
