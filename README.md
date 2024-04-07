@@ -6,7 +6,7 @@ Boilerplate for quick prototyping of web based SaaS applications built using Lar
 - [x] Start with `docker-compose up -d` (and give it a few minutes)
 - [x] Containers (with IP)
     - [ ] Laravel 11 based API/Web container: 11.24.1.1
-        - [ ] xdebug
+        - [x] xdebug
         - [ ] Pint
         - [ ] Telescope
         - [ ] Pulse
