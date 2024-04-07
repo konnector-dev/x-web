@@ -16,12 +16,12 @@ Boilerplate for quick prototyping of web based SaaS applications built using Lar
         - [ ] Livewire
         - [ ] Security Checker (Enlightn)
         - [ ] Enlightn
-    - [ ] Postgres: 11.24.1.2:5432
+    - [x] Postgres: 11.24.1.2:5432
         - Credentials: postgres@password
         - Primary database: postgres
         - Secondary database: test
-    - [ ] Mailpit (local email handler): 11.24.1.3:8025
-    - [ ] Vite (for asset compilation): 11.24.1.4:3000
+    - [x] Mailpit (local email handler): 11.24.1.3:8025
+    - [x] Vite (for asset compilation): 11.24.1.4:3000
         - Runs PHP 8.3 with `apache2-foreground` as the entrypoint
         - Can be used for queue
 
