@@ -13,6 +13,7 @@
         "livewire/livewire": "^3.0"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^3.0",
         "fakerphp/faker": "^1.23",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",
@@ -48,6 +49,19 @@
             "@php artisan key:generate --ansi",
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
             "@php artisan migrate --graceful --ansi"
+        ],
+        "dev": [
+            "@post-root-package-install",
+            "@putenv CACHE_DRIVER=file",
+            "@post-create-project-cmd",
+            "@php artisan migrate --seed",
+            "chmod -R 777 storage bootstrap",
+            "@ide-helper"
+        ],
+        "ide-helper": [
+            "@php artisan ide-helper:generate -n",
+            "@php artisan ide-helper:meta -n",
+            "@php artisan ide-helper:models -n"
         ],
         "pint": "vendor/bin/pint app tests routes",
         "pintest": "vendor/bin/pint app tests routes --test"
