@@ -9,7 +9,7 @@ Boilerplate for quick prototyping of web based SaaS applications built using Lar
         - [x] xdebug
         - [x] Pint
         - [ ] Telescope
-        - [ ] Pulse
+        - [x] Pulse
         - [ ] Pennant
         - [ ] Composer Git Hooks (cghooks)
         - [x] IDE Helper
