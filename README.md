@@ -7,7 +7,7 @@ Boilerplate for quick prototyping of web based SaaS applications built using Lar
 - [x] Containers (with IP)
     - [ ] Laravel 11 based API/Web container: 11.24.1.1
         - [x] xdebug
-        - [ ] Pint
+        - [x] Pint
         - [ ] Telescope
         - [ ] Pulse
         - [ ] Pennant
