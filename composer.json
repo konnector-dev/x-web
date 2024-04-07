@@ -49,7 +49,8 @@
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
             "@php artisan migrate --graceful --ansi"
         ],
-        "pint": "vendor/bin/pint app tests routes --preset per"
+        "pint": "vendor/bin/pint app tests routes",
+        "pintest": "vendor/bin/pint app tests routes --test"
     },
     "extra": {
         "laravel": {
