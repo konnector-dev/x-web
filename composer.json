@@ -8,6 +8,7 @@
         "php": "^8.3",
         "laravel/framework": "^11.0",
         "laravel/jetstream": "^5.0",
+        "laravel/pennant": "^1.7",
         "laravel/pulse": "^1.0@beta",
         "laravel/sanctum": "^4.0",
         "laravel/telescope": "^5.0",
