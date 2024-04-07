@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 
-const host=  '12.35.1.4';
+const host=  '11.24.1.4';
 
 export default defineConfig({
     plugins: [
