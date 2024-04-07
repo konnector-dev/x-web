@@ -26,16 +26,18 @@ Boilerplate for quick prototyping of web based SaaS applications built using Lar
         - Can be used for queue
 
 #### Features
-- [ ] User Registration
-    - [ ] Name, Email, Password (with confirmation)
+- [x] User Registration
+    - [x] Name, Email, Password (with confirmation)
     - [ ] Login with GitHub
-- [ ] Forgot Password
-- [ ] User Login
-    - [ ] Email, Password
+- [x] Forgot Password
+- [x] User Login
+    - [x] Email, Password
     - [ ] Login with GitHub
-- [ ] User Profile
-    - [ ] Name, Email
-    - [ ] Avatar
-    - [ ] 2FA setup
-    - [ ] Browser sessions
+- [x] Teams setup
+- [x] User Profile
+    - [x] Name, Email
+    - [x] Avatar
+    - [x] 2FA setup
+    - [x] Browser sessions
+- [x] API tokens
 
