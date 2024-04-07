@@ -28,11 +28,9 @@ Boilerplate for quick prototyping of web based SaaS applications built using Lar
 #### Features
 - [x] User Registration
     - [x] Name, Email, Password (with confirmation)
-    - [ ] Login with GitHub
 - [x] Forgot Password
 - [x] User Login
     - [x] Email, Password
-    - [ ] Login with GitHub
 - [x] Teams setup
 - [x] User Profile
     - [x] Name, Email
@@ -40,4 +38,6 @@ Boilerplate for quick prototyping of web based SaaS applications built using Lar
     - [x] 2FA setup
     - [x] Browser sessions
 - [x] API tokens
-
+- [ ] Social Login | Using Socialite
+  - [ ] Login with GitHub
+  - [ ] Login with Google
