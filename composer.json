@@ -24,6 +24,7 @@
         "laravel/sail": "^1.26",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.0",
+        "phpmd/phpmd": "^2.15",
         "phpunit/phpunit": "^11.0",
         "spatie/laravel-ignition": "^2.4"
     },
@@ -69,6 +70,7 @@
             "@php artisan ide-helper:models -n"
         ],
         "pint": "vendor/bin/pint app tests routes",
+        "phpmd": "vendor/bin/phpmd app text unusedcode,codesize,naming,phpmd-ruleset.xml",
         "pintest": "vendor/bin/pint app tests routes --test",
         "security-check": "php vendor/bin/security-checker security:check"
     },
