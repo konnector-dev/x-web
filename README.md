@@ -15,7 +15,7 @@ Boilerplate for quick prototyping of web based SaaS applications built using Lar
         - [x] IDE Helper
         - [x] Livewire
         - [x] Security Checker (Enlightn)
-        - [ ] Enlightn
+        - [x] Enlightn
     - [x] Postgres: 11.24.1.2:5432
         - Credentials: postgres@password
         - Primary database: postgres
