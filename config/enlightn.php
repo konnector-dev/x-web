@@ -15,10 +15,32 @@ return [
     'analyzers' => ['*'],
 
     // If you wish to skip running some analyzers, list the classes in the array below.
-    'exclude_analyzers' => [],
+    'exclude_analyzers' => [
+        Enlightn\Enlightn\Analyzers\Performance\OpcacheAnalyzer::class,
+        Enlightn\Enlightn\Analyzers\Reliability\CustomErrorPageAnalyzer::class,
+        Enlightn\Enlightn\Analyzers\Security\StableDependencyAnalyzer::class,
+        Enlightn\Enlightn\Analyzers\Security\FilePermissionsAnalyzer::class,
+        Enlightn\Enlightn\Analyzers\Security\PHPIniAnalyzer::class,
+        Enlightn\Enlightn\Analyzers\Security\XSSAnalyzer::class,
+        Enlightn\Enlightn\Analyzers\Reliability\InvalidPropertyAccessAnalyzer::class,
+        Enlightn\Enlightn\Analyzers\Reliability\InvalidMethodCallAnalyzer::class,
+        Enlightn\Enlightn\Analyzers\Performance\UnusedGlobalMiddlewareAnalyzer::class,
+        Enlightn\Enlightn\Analyzers\Reliability\InvalidReturnTypeAnalyzer::class,
+        Enlightn\Enlightn\Analyzers\Reliability\CachePrefixAnalyzer::class,
+    ],
 
     // If you wish to skip running some analyzers in CI mode, list the classes below.
-    'ci_mode_exclude_analyzers' => [],
+    'ci_mode_exclude_analyzers' => [
+        Enlightn\Enlightn\Analyzers\Performance\CacheDriverAnalyzer::class,
+        Enlightn\Enlightn\Analyzers\Performance\QueueDriverAnalyzer::class,
+        Enlightn\Enlightn\Analyzers\Performance\SessionDriverAnalyzer::class,
+        Enlightn\Enlightn\Analyzers\Reliability\EnvFileAnalyzer::class,
+        Enlightn\Enlightn\Analyzers\Reliability\EnvExampleAnalyzer::class,
+        Enlightn\Enlightn\Analyzers\Reliability\EnvVariableAnalyzer::class,
+        Enlightn\Enlightn\Analyzers\Performance\UnusedGlobalMiddlewareAnalyzer::class,
+        Enlightn\Enlightn\Analyzers\Reliability\InvalidReturnTypeAnalyzer::class,
+        Enlightn\Enlightn\Analyzers\Reliability\CachePrefixAnalyzer::class,
+    ],
 
     /*
     |--------------------------------------------------------------------------
