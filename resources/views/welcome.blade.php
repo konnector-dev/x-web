@@ -9,6 +9,8 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+        <!-- Add favicon -->
+        <link rel="icon" href="{{ asset('favicon.png') }}" type="image/png" />
 
         <!-- Styles -->
         <style>
@@ -54,7 +56,7 @@
                         @endif
                     </header>
 
-                    <main class="mt-6">
+                    <main class="mt-6 text-green-600">
                         <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
                             <a
                                 href="https://laravel.com/docs"
@@ -90,7 +92,7 @@
                                         </div>
 
                                         <div class="pt-3 sm:pt-5 lg:pt-0">
-                                            <h2 class="text-xl font-semibold text-black dark:text-white">Documentation</h2>
+                                            <h2 class="text-xl font-semibold text-black dark:text-white">Documentations1!</h2>
 
                                             <p class="mt-4 text-sm/relaxed">
                                                 Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
