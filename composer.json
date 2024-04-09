@@ -73,7 +73,7 @@
         "pint": "vendor/bin/pint app tests routes",
         "pest": "vendor/bin/pest --compact --parallel",
         "coverage": "vendor/bin/pest --compact --parallel --coverage",
-        "pest-min": "vendor/bin/pest --compact --parallel --min=77",
+        "pest-min": "vendor/bin/pest --compact --parallel --coverage --min=77",
         "type-coverage": "vendor/bin/pest --parallel --type-coverage",
         "phpmd": "vendor/bin/phpmd app text unusedcode,codesize,naming,phpmd-ruleset.xml",
         "pintest": "vendor/bin/pint app tests routes --test",
@@ -81,8 +81,7 @@
         "enlightn": "php artisan enlightn",
         "ci": [
             "@pint",
-            "@pest-min",
-            "@coverage"
+            "@pest-min"
         ]
     },
     "extra": {
