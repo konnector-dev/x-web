@@ -78,7 +78,12 @@
         "phpmd": "vendor/bin/phpmd app text unusedcode,codesize,naming,phpmd-ruleset.xml",
         "pintest": "vendor/bin/pint app tests routes --test",
         "security-check": "php vendor/bin/security-checker security:check",
-        "enlightn": "php artisan enlightn"
+        "enlightn": "php artisan enlightn",
+        "ci": [
+            "@pint",
+            "@pest-min",
+            "@coverage"
+        ]
     },
     "extra": {
         "laravel": {

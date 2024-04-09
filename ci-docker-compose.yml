@@ -1,0 +1,47 @@
+version : "3"
+services:
+  x-web:
+    build:
+      context: .
+      dockerfile: ci.Dockerfile
+    container_name: x-web
+    ports:
+      - "1235:80"
+    restart: "no"
+    networks:
+      x-network:
+        ipv4_address: 11.24.1.1
+
+  x-pg:
+    image: postgres:15
+    container_name: x-pg
+    volumes:
+      - x-pg-disk:/var/lib/postgres
+    restart: "no"
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: testing
+    networks:
+      x-network:
+        ipv4_address: 11.24.1.2
+
+  x-mailpit:
+    image: 'axllent/mailpit:latest'
+    container_name: x-mailpit
+    restart: "no"
+    networks:
+      x-network:
+        ipv4_address: 11.24.1.3
+
+# On-disk storage of DB data, when containers are stopped
+volumes:
+  x-pg-disk: {}
+
+# Local network for services running using this docker-compose config
+networks:
+  x-network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 11.24.0.0/16
+
