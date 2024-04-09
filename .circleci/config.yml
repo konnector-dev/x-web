@@ -1,8 +1,7 @@
 version: 2.1
 jobs:
   ci:
-    machine:
-      image: ubuntu-2004:202201-02
+    machine: true
     working_directory: ~/code
     steps:
       - checkout
