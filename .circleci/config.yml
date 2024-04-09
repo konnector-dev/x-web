@@ -2,6 +2,7 @@ version: 2.1
 jobs:
   ci:
     machine: true
+    resource_class: small
     working_directory: ~/code
     steps:
       - checkout
