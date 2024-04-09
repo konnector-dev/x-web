@@ -23,7 +23,7 @@ Boilerplate for quick prototyping of web based SaaS applications built using Lar
         - Primary database: postgres
         - Secondary database: test
     - [x] Mailpit (local email handler): 11.24.1.3:8025
-    - [x] Vite (for asset compilation): 11.24.1.4:3000
+    - [x] Vite (for asset compilation): 11.24.1.4:5173
         - Runs PHP 8.3 with `apache2-foreground` as the entrypoint
         - Can be used for queue
 
@@ -31,8 +31,10 @@ Boilerplate for quick prototyping of web based SaaS applications built using Lar
 - [x] User Registration
     - [x] Name, Email, Password (with confirmation)
 - [x] Forgot Password
-- [x] User Login
+- [ ] Login | Using form and Socialite
     - [x] Email, Password
+    - [ ] Login with GitHub
+    - [ ] Login with Google
 - [x] Teams setup
 - [x] User Profile
     - [x] Name, Email
@@ -40,6 +42,3 @@ Boilerplate for quick prototyping of web based SaaS applications built using Lar
     - [x] 2FA setup
     - [x] Browser sessions
 - [x] API tokens
-- [ ] Social Login | Using Socialite
-  - [ ] Login with GitHub
-  - [ ] Login with Google
