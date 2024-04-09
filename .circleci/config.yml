@@ -11,7 +11,7 @@ jobs:
           command: docker-compose -f ci-docker-compose.yml up -d
       - run:
           name: CI checks
-          command: docker-compose -f ci-docker-compose.yml exec lbp-api composer run ci
+          command: docker-compose -f ci-docker-compose.yml exec axe-web composer run ci
 
 workflows:
   version: 2
