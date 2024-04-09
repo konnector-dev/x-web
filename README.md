@@ -17,6 +17,7 @@ Boilerplate for quick prototyping of web based SaaS applications built using Lar
         - [x] Security Checker (Enlightn)
         - [x] Enlightn
         - [x] Pest
+        - [ ] Socialite
     - [x] Postgres: 11.24.1.2:5432
         - Credentials: postgres@password
         - Primary database: postgres
