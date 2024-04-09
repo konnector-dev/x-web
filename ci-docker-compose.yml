@@ -1,10 +1,10 @@
 version : "3"
 services:
-  x-web:
+  axe-web:
     build:
       context: .
       dockerfile: ci.Dockerfile
-    container_name: x-web
+    container_name: axe-web
     ports:
       - "1235:80"
     restart: "no"

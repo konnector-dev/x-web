@@ -2,7 +2,7 @@
     "name": "konnector-dev/x-web",
     "type": "boilerplate",
     "description": "Boilerplate for quick prototyping of web based SaaS applications built using Laravel ecosystem",
-    "keywords": ["x-web", "boilerplate"],
+    "keywords": ["axe-web", "boilerplate"],
     "license": "MIT",
     "require": {
         "php": "^8.3",

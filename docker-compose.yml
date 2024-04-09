@@ -1,17 +1,17 @@
 version : "3"
 services:
-  x-web:
+  axe-web:
     build:
       context: .
       dockerfile: d-web.Dockerfile
-    container_name: x-web
+    container_name: axe-web
     volumes:
       - .:/var/www/html
     ports:
       - "1235:80"
     restart: "no"
     environment:
-        XDEBUG_CONFIG: "serverName=x-web"
+        XDEBUG_CONFIG: "serverName=axe-web"
         XDEBUG_SESSION: "on"
     networks:
       x-network:

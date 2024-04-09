@@ -19,4 +19,4 @@ jobs:
       - name: Docker Compose
         run: docker-compose -f ci-docker-compose.yml up -d
       - name: CI checks
-        run: docker-compose -f ci-docker-compose.yml exec -T x-web composer run ci
+        run: docker-compose -f ci-docker-compose.yml exec -T axe-web composer run ci
