@@ -25,6 +25,7 @@
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.0",
         "pestphp/pest": "^2.34",
+        "pestphp/pest-plugin-type-coverage": "^2.8",
         "phpmd/phpmd": "^2.15",
         "spatie/laravel-ignition": "^2.4"
     },
@@ -72,6 +73,8 @@
         "pint": "vendor/bin/pint app tests routes",
         "pest": "vendor/bin/pest --compact --parallel",
         "coverage": "vendor/bin/pest --compact --parallel --coverage",
+        "pest-min": "vendor/bin/pest --compact --parallel --min=77",
+        "type-coverage": "vendor/bin/pest --parallel --type-coverage",
         "phpmd": "vendor/bin/phpmd app text unusedcode,codesize,naming,phpmd-ruleset.xml",
         "pintest": "vendor/bin/pint app tests routes --test",
         "security-check": "php vendor/bin/security-checker security:check",
