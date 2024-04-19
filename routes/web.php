@@ -1,9 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
+use Laravel\Jetstream\Jetstream;
 
 Route::get('/', function () {
-    return view('welcome');
+    $termsFile = Jetstream::localizedMarkdownPath('../../README.md');
+
+    return view('readme', [
+        'readme' => Str::markdown(file_get_contents($termsFile)),
+    ]);
 });
 
 Route::middleware([
@@ -15,3 +21,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
