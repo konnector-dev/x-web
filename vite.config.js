@@ -9,8 +9,19 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
+                'README.md',
             ],
-            refresh: true,
+            refresh: [
+                {
+                    paths: [
+                        'app/**/*.php',
+                        'resources/**/*.php',
+                        'routes/**/*.php',
+                        'config/**/*.php',
+                        'README.md',
+                    ]
+                }
+            ],
         }),
     ],
     server: {
