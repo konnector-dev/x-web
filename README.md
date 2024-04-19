@@ -1,22 +1,39 @@
 ### xWeb
 
-Boilerplate for quick prototyping of web based SaaS applications built using Laravel ecosystem
+Laravel ecosystem based boilerplate for prototyping SaaS apps
 
 #### Dev environment setup
-Start with `docker-compose up -d` (and give it a few minutes)
+- Prerequisites : **Docker** and **Docker Compose**
+- Start : **docker-compose up -d** (and give it a few minutes)
+- Use : [**http://11.24.1.1**](http://11.24.1.1)
 
-- [x] Containers
-    - [x] `11.24.1.1` : Laravel 11 based API/Web container
-    - [x] `11.24.1.2:5432` : Postgres DB
-      - Credentials: `postgres`@`password`
-      - Primary database: `postgres`
-      - Secondary database: `test`
-    - [x] `11.24.1.3:8025` : Mailpit, for local emails
-    - [x] `11.24.1.4:5173`: Vite
-      - `npm run dev` in background for asset compilation
-      - Has PHP 8.3 pre-installed, hence also used for running background jobs
+**DevOps**
+- Containers
+    - **11.24.1.1** : Laravel 11 based API/Web container
+    - **11.24.1.2:5432** : Postgres DB
+      - Credentials: **postgres**@**password**
+      - Primary database: **postgres**
+      - Secondary database: **test**
+    - **11.24.1.3:8025** : Mailpit, for local emails
+    - **11.24.1.4:5173**: Vite
+      - **npm run dev** in background for asset compilation
+      - Has PHP 8.3 pre-installed, can also be used for running background jobs
 
-  Available packages
+**Available**
+- Features
+    - [x] Authentication
+        - [x] Registration with Name, Email, Password
+        - [x] Login with Email, Password
+        - [x] Forgot/Reset Password
+    - [x] User dashboard
+        - [x] Name, Email
+        - [x] Avatar
+        - [x] 2FA setup
+        - [x] Browser sessions
+        - [x] Teams setup
+        - [x] API tokens
+
+- Packages
     - [x] xdebug
     - [x] Pint
     - [x] Telescope
@@ -28,26 +45,13 @@ Start with `docker-compose up -d` (and give it a few minutes)
     - [x] Enlightn
     - [x] Pest
 
-  Coming soon
+**Coming Soon**
+- Features
+    - [ ] Socialite login
+        - [ ] Login with GitHub
+        - [ ] Login with Google
+
+- Packages
     - [ ] Socialite
     - [ ] Pre-commit/pre-push git hooks
 
-#### Features
-Available
-  - [x] User Registration
-    - [x] Name, Email, Password (with confirmation)
-  - [x] Forgot Password
-  - [x] Login
-    - [x] Email, Password
-  - [x] Teams setup
-  - [x] User Profile
-    - [x] Name, Email
-    - [x] Avatar
-    - [x] 2FA setup
-    - [x] Browser sessions
-  - [x] API tokens
-
-Coming soon
-  - [ ] Login > Socialite
-    - [ ] Login with GitHub
-    - [ ] Login with Google
