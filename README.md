@@ -33,7 +33,7 @@ Laravel ecosystem based boilerplate for prototyping SaaS apps
         - [x] Teams setup
         - [x] API tokens
 
-- Packages
+- Tools/Packages
     - [x] xdebug
     - [x] Pint
     - [x] Telescope
@@ -51,7 +51,7 @@ Laravel ecosystem based boilerplate for prototyping SaaS apps
         - [ ] Login with GitHub
         - [ ] Login with Google
 
-- Packages
+- Tools/Packages
     - [ ] Socialite
     - [ ] Pre-commit/pre-push git hooks
 
