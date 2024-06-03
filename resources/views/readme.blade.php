@@ -55,7 +55,7 @@
                     <main class="mt-6">
                         <div class="">
                             <div class="flex items-start rounded-lg bg-white dark:bg-black text-black dark:text-white p-6">
-                                <div class="pt-3 sm:pt-5 prose">
+                                <div class="pt-3 sm:pt-5 prose dark:prose-invert">
                                     <h2 class="text-xl font-semibold">README.md</h2>
 
                                     <p class="mt-4 text-sm/relaxed">
