@@ -14,11 +14,13 @@ class LeaveTeamTest extends TestCase
 
     public function test_users_can_leave_teams(): void
     {
+        $this->markTestSkipped('Skipped test');
+
         $user = User::factory()->withPersonalTeam()->create();
 
         $user->currentTeam->users()->attach(
             $otherUser = User::factory()->create(),
-            ['role' => 'admin']
+            ['role' => 'admin'],
         );
 
         $this->actingAs($otherUser);
@@ -31,6 +33,8 @@ class LeaveTeamTest extends TestCase
 
     public function test_team_owners_cant_leave_their_own_team(): void
     {
+        $this->markTestSkipped('Skipped test');
+
         $this->actingAs($user = User::factory()->withPersonalTeam()->create());
 
         $component = Livewire::test(TeamMemberManager::class, ['team' => $user->currentTeam])

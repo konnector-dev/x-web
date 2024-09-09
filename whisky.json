@@ -1,0 +1,11 @@
+{
+  "disabled": [],
+  "hooks": {
+    "pre-commit": [
+      "docker-compose exec axe-web composer pre-commit"
+    ],
+    "pre-push": [
+        "docker-compose exec axe-web composer pre-push"
+    ]
+  }
+}

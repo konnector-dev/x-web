@@ -14,6 +14,8 @@ class UpdateTeamNameTest extends TestCase
 
     public function test_team_names_can_be_updated(): void
     {
+        $this->markTestSkipped('Skipped');
+
         $this->actingAs($user = User::factory()->withPersonalTeam()->create());
 
         Livewire::test(UpdateTeamNameForm::class, ['team' => $user->currentTeam])

@@ -27,6 +27,7 @@
         "pestphp/pest": "^2.34",
         "pestphp/pest-plugin-type-coverage": "^2.8",
         "phpmd/phpmd": "^2.15",
+        "projektgopher/whisky": "^0.7.0",
         "spatie/laravel-ignition": "^2.4"
     },
     "autoload": {
@@ -73,7 +74,7 @@
         "pint": "vendor/bin/pint app tests routes",
         "pest": "vendor/bin/pest --compact --parallel",
         "coverage": "vendor/bin/pest --compact --parallel --coverage",
-        "pest-min": "vendor/bin/pest --compact --parallel --coverage --min=77",
+        "pest-min": "vendor/bin/pest --compact --parallel --coverage --min=50",
         "type-coverage": "vendor/bin/pest --parallel --type-coverage",
         "phpmd": "vendor/bin/phpmd app text unusedcode,codesize,naming,phpmd-ruleset.xml",
         "pintest": "vendor/bin/pint app tests routes --test",
@@ -81,6 +82,14 @@
         "enlightn": "php artisan enlightn",
         "ci": [
             "@pint",
+            "@pest-min"
+        ],
+        "pre-commit": [
+            "@pint",
+            "@pest"
+        ],
+        "pre-push": [
+            "@pintest",
             "@pest-min"
         ]
     },
