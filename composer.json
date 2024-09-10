@@ -26,7 +26,6 @@
         "nunomaduro/collision": "^8.0",
         "pestphp/pest": "^3.0",
         "phpmd/phpmd": "^2.15",
-        "projektgopher/whisky": "^0.7.0",
         "spatie/laravel-ignition": "^2.4"
     },
     "autoload": {
